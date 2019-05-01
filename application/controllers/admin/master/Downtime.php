@@ -19,7 +19,7 @@ class Downtime extends MY_Controller {
     function simpan(){
         $params = array(
             'id_problem' => (int) $this->input->post('id_problem'),
-            'kode_downtime' => $this->input->post('kode_downtime'),
+            'kode_problem' => $this->input->post('kode_problem'),
             'nama_problem' => $this->input->post('nama_problem'),
             'keterangan_problem' => $this->input->post('keterangan_problem'),
             'type' => $this->input->post('type')

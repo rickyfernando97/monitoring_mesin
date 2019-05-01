@@ -281,7 +281,7 @@
 
 					$('#btnEndDT').click(function(){
 						var params = {
-							id_detailkegiatan: machine.downtime.id_detailkegiatan,
+							id_downtime: machine.downtime.id_downtime,
 							id_mesin: machine.selected.id_mesin,
 							time_mulai: machine.time_mulai
 						}

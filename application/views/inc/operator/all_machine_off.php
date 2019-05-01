@@ -46,11 +46,11 @@
                       <div class="col-md-6 col-xs-12">
                         <div class="form-group">
                           <label>Product</label>
-                          <select class="form-control input-lg" id="operated-id_product" name="id_product" required="true">
+                          <select class="form-control input-lg" id="operated-id_produk" name="id_produk" required="true">
                             <option value=""></option>
                             <?php
                               foreach ($product as $d) {
-                                echo '<option value="'.$d->id_product.'">'.$d->product_name.'</option>';
+                                echo '<option value="'.$d->id_produk.'">'.$d->nama_produk.'</option>';
                               }
                             ?>
                           </select>
@@ -85,13 +85,13 @@
                 $('#yesStartMachine').click(function(){
                   var id = parseInt(machine.selected.id_mesin);
                   var kode_batch = $('#operated-kode_batch').val();
-                  var id_product = $('#operated-id_product').val();
-                  if(id!=0 && kode_batch!='' && id_product != ''){
+                  var id_produk = $('#operated-id_produk').val();
+                  if(id!=0 && kode_batch!='' && id_produk != ''){
                     $('#operated-msg-error').html('');
                     $.ajax({
                         method: "POST",
                         url: app.site_url + '/operator/app/operate_machine/'+id,
-                        data: {kode_batch: kode_batch, id_product: id_product}
+                        data: {kode_batch: kode_batch, id_produk: id_produk}
                       })
                         .done(function( res ) {
                           var obj = jQuery.parseJSON( res );

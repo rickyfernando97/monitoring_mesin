@@ -139,13 +139,13 @@ btnDetailMachine = function(arg) {
   var data = machine.modif[arg];
   machine.selected = data;
 
-  if (data.id_keg != '') {
+  if (data.id_produksi != '') {
     mask_body();
     $.ajax({
         method: "POST",
         url: app.site_url + '/maintenance/app/get_detail_machine',
         data: {
-          id_keg: data.id_keg
+          id_produksi: data.id_produksi
         }
       })
       .done(function(res) {
@@ -193,13 +193,13 @@ btnConfirmProblem = function(arg, confirm) {
   var data = machine.modif[arg];
   machine.selected = data;
 
-  if (data.id_keg != '') {
+  if (data.id_produksi != '') {
     mask_body();
     $.ajax({
         method: "POST",
         url: app.site_url + '/maintenance/app/get_machine_problem',
         data: {
-          id_keg: data.id_keg,
+          id_produksi: data.id_produksi,
           action_confirm: action_confirm
         }
       })
@@ -220,7 +220,7 @@ btnConfirmProblem = function(arg, confirm) {
           $('#modalConfirmProblem-mesin').html(data.nama_mesin);
           $('#modalConfirmProblem-masalah').html(obj.data.nama_problem);
           $('#modalConfirmProblem-ket-masalah').html(obj.data.keterangan_problem);
-          $('#modalConfirmProblem-ket-operator').html(obj.data.keterangan_detailkeg);
+          $('#modalConfirmProblem-ket-operator').html(obj.data.keterangan_downtime);
           $('#modalConfirmProblem').modal('show');
         }
         un_mask_body();
@@ -270,7 +270,7 @@ $(document).ready(function() {
   $('#yesConfirmProblem').click(function() {
     var param = {
       id_mesin: machine.selected.id_mesin,
-      id_detailkegiatan: machine.problem_detail.id_detailkegiatan
+      id_downtime: machine.problem_detail.id_downtime
     }
     $.ajax({
         method: "POST",
@@ -296,7 +296,7 @@ $(document).ready(function() {
   $('#yesConfirmResolvProblem').click(function() {
     var param = {
       id_mesin: machine.selected.id_mesin,
-      id_detailkegiatan: machine.problem_detail.id_detailkegiatan
+      id_downtime: machine.problem_detail.id_downtime
     }
     $.ajax({
         method: "POST",

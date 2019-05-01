@@ -18,14 +18,14 @@ class Product extends MY_Controller {
 
     function simpan(){
         $params = array(
-            'id_product' => (int) $this->input->post('id_product'),
-            'product_name' => $this->input->post('product_name'),
+            'id_produk' => (int) $this->input->post('id_produk'),
+            'nama_produk' => $this->input->post('nama_produk'),
             'keterangan' => $this->input->post('keterangan'),
             'active' => (int) $this->input->post('active')
         );
 
         $res = false;
-        if($params['id_product']=='' || $params['id_product']==0){
+        if($params['id_produk']=='' || $params['id_produk']==0){
             $res = $this->m_product->add($params);
         } else {
             $res = $this->m_product->upd($params);
@@ -42,7 +42,7 @@ class Product extends MY_Controller {
     function del()
     {
         $params = array(
-            'id_product' => $this->input->post('id_product')
+            'id_produk' => $this->input->post('id_produk')
         );
         $res = $this->m_product->del($params); 
         if($res){

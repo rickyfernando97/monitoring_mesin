@@ -1,0 +1,415 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 01 Bulan Mei 2019 pada 18.33
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `skripsi_ricky`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `ci_sessions`
+--
+
+CREATE TABLE `ci_sessions` (
+  `id` varchar(128) NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `data` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `ci_sessions`
+--
+
+INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('2dlipo79c5fdd87ktrr69fecgcat40b9', '::1', 1556722873, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732323837333b69735f6c6f67696e7c623a313b69645f757365727c733a313a2232223b69645f6d6573696e7c693a303b69645f6b65677c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a31303a2253757065727669736f72223b70617373776f72647c733a33323a223039333438633230613031396265303331383338376330386466376137383364223b6e616d617c733a353a22576177616e223b7573657267726f757069647c733a313a2234223b7573657267726f75707c733a31303a2253757065727669736f72223b),
+('1k8alm5bhpdshe9ikjaoj21shp27ca05', '192.168.1.30', 1556723607, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732333630373b),
+('rt5092idj4q8k0i2rp909einnfdnh4j6', '192.168.1.33', 1556726624, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732363632343b69735f6c6f67696e7c623a313b69645f757365727c733a313a2233223b69645f6d6573696e7c693a303b69645f6b65677c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a383a2274656b6e69736931223b70617373776f72647c733a33323a226532313339346161656565313066393137663538313035346432346230333166223b6e616d617c733a343a22416d696e223b7573657267726f757069647c733a313a2232223b7573657267726f75707c733a31313a224d61696e74656e616e6365223b),
+('rvlhujincduq2ua8nc6ibtp0v3b474nf', '::1', 1556720987, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732303938373b69735f6c6f67696e7c623a313b69645f757365727c733a313a2236223b69645f6d6573696e7c693a323b69645f6b65677c693a32383b6b6f64655f73657373696f6e7c733a31363a224d5455314e6a63794d4459344f433479223b757365726e616d657c733a393a226f70657261746f7231223b70617373776f72647c733a33323a223462353833333736623237363762393233633365316461363064313064653539223b6e616d617c733a353a2246656e6469223b7573657267726f757069647c733a313a2233223b7573657267726f75707c733a383a224f70657261746f72223b),
+('l7r4s83v0rnic6vk1nf5qr6lrprg047p', '::1', 1556726899, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732363839393b69735f6c6f67696e7c623a313b69645f757365727c733a313a2236223b69645f6d6573696e7c693a303b69645f6b65677c693a303b6b6f64655f73657373696f6e7c733a31363a224d5455314e6a63794d4459344f433479223b757365726e616d657c733a393a226f70657261746f7231223b70617373776f72647c733a33323a223462353833333736623237363762393233633365316461363064313064653539223b6e616d617c733a353a2246656e6469223b7573657267726f757069647c733a313a2233223b7573657267726f75707c733a383a224f70657261746f72223b),
+('o6bghqvi5gn98m8fuder7t3a0s4pimkr', '::1', 1556723341, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732333334313b),
+('0dn8ql60i31gft13r5hbihtundrl5jk6', '::1', 1556723672, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732333637323b),
+('ud7rkc4qsuo9tapsdeknrcft91rj538t', '192.168.1.32', 1556723892, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732333839323b),
+('0d7hl1j4a8m1fp8vfncr9smtkvgac4vu', '192.168.1.30', 1556724172, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732343137323b),
+('ue1m6v1m1ohad4atnksm00kiqf30d3uf', '::1', 1556724238, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732343233383b),
+('8c09vkffu8045dtuhdmnsumrik6ehta0', '192.168.1.32', 1556723952, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732333839323b),
+('d2gj5jjg688g2l5t8ht4tlnd8256sk9o', '192.168.1.30', 1556724329, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732343137323b),
+('hiou4ka7eqs6argn5f7nfdibvcnm5v19', '::1', 1556727629, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732373632393b69735f6c6f67696e7c623a313b69645f757365727c733a313a2232223b69645f6d6573696e7c693a303b69645f6b65677c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a31303a2253757065727669736f72223b70617373776f72647c733a33323a223039333438633230613031396265303331383338376330386466376137383364223b6e616d617c733a353a22576177616e223b7573657267726f757069647c733a313a2234223b7573657267726f75707c733a31303a2253757065727669736f72223b),
+('3q5l9mmqr80cjk1hcckag7tm22nc22h8', '::1', 1556724871, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732343837313b),
+('925ee4m5kt25o2eig44ob1g81615ttmj', '::1', 1556724871, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732343837313b),
+('5j28tikmt6u4kgb5ar1hbt05q59eeo9e', '::1', 1556724875, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732343837353b),
+('ko9vku0rsr2h50uk5uilfa49o88g90d6', '192.168.1.33', 1556727590, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732373539303b69735f6c6f67696e7c623a313b69645f757365727c733a313a2233223b69645f6d6573696e7c693a303b69645f70726f64756b73697c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a383a2274656b6e69736931223b70617373776f72647c733a33323a226532313339346161656565313066393137663538313035346432346230333166223b6e616d617c733a343a22416d696e223b7573657267726f757069647c733a313a2232223b7573657267726f75707c733a31313a224d61696e74656e616e6365223b),
+('3m5smmrgktcn2tu1o97d7h80quv9j057', '::1', 1556727244, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732373234343b69735f6c6f67696e7c623a313b69645f757365727c733a313a2232223b69645f6d6573696e7c693a303b69645f70726f64756b73697c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a31303a2253757065727669736f72223b70617373776f72647c733a33323a223039333438633230613031396265303331383338376330386466376137383364223b6e616d617c733a353a22576177616e223b7573657267726f757069647c733a313a2234223b7573657267726f75707c733a31303a2253757065727669736f72223b),
+('s7jdgp2j5es2rkb5nkfrh5kb605m90bq', '::1', 1556728017, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732383031373b69735f6c6f67696e7c623a313b69645f757365727c733a313a2232223b69645f6d6573696e7c693a303b69645f70726f64756b73697c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a31303a2253757065727669736f72223b70617373776f72647c733a33323a223039333438633230613031396265303331383338376330386466376137383364223b6e616d617c733a353a22576177616e223b7573657267726f757069647c733a313a2234223b7573657267726f75707c733a31303a2253757065727669736f72223b),
+('e8db8pvgogmp4ibgb96cvqtvt31iv04u', '192.168.1.33', 1556727985, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732373938353b69735f6c6f67696e7c623a313b69645f757365727c733a313a2233223b69645f6d6573696e7c693a303b69645f70726f64756b73697c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a383a2274656b6e69736931223b70617373776f72647c733a33323a226532313339346161656565313066393137663538313035346432346230333166223b6e616d617c733a343a22416d696e223b7573657267726f757069647c733a313a2232223b7573657267726f75707c733a31313a224d61696e74656e616e6365223b),
+('vbh6ogcknhsu45av94su3796ovkvsago', '::1', 1556728023, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732383032333b69735f6c6f67696e7c623a313b69645f757365727c733a323a223133223b69645f6d6573696e7c693a313b69645f70726f64756b73697c693a313b6b6f64655f73657373696f6e7c733a31363a224d5455314e6a63794e7a59344e793478223b757365726e616d657c733a393a226f70657261746f7235223b70617373776f72647c733a33323a223462353833333736623237363762393233633365316461363064313064653539223b6e616d617c733a353a22456b73616e223b7573657267726f757069647c733a313a2233223b7573657267726f75707c733a383a224f70657261746f72223b),
+('drcgvmb5gp12jpjq91k38nv3sk39d4i2', '192.168.1.33', 1556728317, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732383331373b69735f6c6f67696e7c623a313b69645f757365727c733a313a2233223b69645f6d6573696e7c693a303b69645f70726f64756b73697c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a383a2274656b6e69736931223b70617373776f72647c733a33323a226532313339346161656565313066393137663538313035346432346230333166223b6e616d617c733a343a22416d696e223b7573657267726f757069647c733a313a2232223b7573657267726f75707c733a31313a224d61696e74656e616e6365223b),
+('rsp8udt8tv4vpg2tbb4jrnnlc7ik70l1', '::1', 1556728274, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732383031373b69735f6c6f67696e7c623a313b69645f757365727c733a313a2232223b69645f6d6573696e7c693a303b69645f70726f64756b73697c693a303b6b6f64655f73657373696f6e7c693a303b757365726e616d657c733a31303a2253757065727669736f72223b70617373776f72647c733a33323a223039333438633230613031396265303331383338376330386466376137383364223b6e616d617c733a353a22576177616e223b7573657267726f757069647c733a313a2234223b7573657267726f75707c733a31303a2253757065727669736f72223b),
+('k07j0jd1d4ee81n4om7dd6c9t2ifnb7f', '::1', 1556728309, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732383032333b69735f6c6f67696e7c623a313b69645f757365727c733a323a223133223b69645f6d6573696e7c693a303b69645f70726f64756b73697c693a303b6b6f64655f73657373696f6e7c733a31363a224d5455314e6a63794e7a59344e793478223b757365726e616d657c733a393a226f70657261746f7235223b70617373776f72647c733a33323a223462353833333736623237363762393233633365316461363064313064653539223b6e616d617c733a353a22456b73616e223b7573657267726f757069647c733a313a2233223b7573657267726f75707c733a383a224f70657261746f72223b),
+('ommfnrk0ivef3ff8edklme84j0stu1jr', '192.168.1.33', 1556728317, 0x5f5f63695f6c6173745f726567656e65726174657c693a313535363732383331373b);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `downtime`
+--
+
+CREATE TABLE `downtime` (
+  `id_downtime` int(11) NOT NULL,
+  `id_produksi` int(11) NOT NULL,
+  `id_problem` int(11) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '1',
+  `waktu_mulai` datetime DEFAULT NULL,
+  `waktu_confirm` datetime DEFAULT NULL,
+  `waktu_selesai` datetime DEFAULT NULL,
+  `downtime_duration` bigint(20) DEFAULT NULL,
+  `keterangan_downtime` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `downtime`
+--
+
+INSERT INTO `downtime` (`id_downtime`, `id_produksi`, `id_problem`, `status`, `waktu_mulai`, `waktu_confirm`, `waktu_selesai`, `downtime_duration`, `keterangan_downtime`) VALUES
+(1, 1, 2, 3, '2019-05-01 18:23:56', '2019-05-01 18:27:12', '2019-05-01 18:27:26', 210, ''),
+(2, 1, 3, 3, '2019-05-01 18:27:39', '2019-05-01 18:27:54', '2019-05-01 18:28:08', 29, '');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `master_hakakses`
+--
+
+CREATE TABLE `master_hakakses` (
+  `id_hakakses` int(11) NOT NULL,
+  `id_modul` int(11) NOT NULL DEFAULT '0',
+  `nama_hakakses` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `master_hakakses`
+--
+
+INSERT INTO `master_hakakses` (`id_hakakses`, `id_modul`, `nama_hakakses`) VALUES
+(1, 1, 'Admininistrator'),
+(2, 1, 'Maintenance'),
+(3, 1, 'Operator'),
+(4, 1, 'Supervisor');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `master_mesin`
+--
+
+CREATE TABLE `master_mesin` (
+  `id_mesin` int(11) NOT NULL,
+  `kode_mesin` varchar(500) NOT NULL,
+  `nama_mesin` varchar(500) DEFAULT NULL,
+  `status_mesin` int(11) DEFAULT NULL,
+  `keterangan_mesin` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `master_mesin`
+--
+
+INSERT INTO `master_mesin` (`id_mesin`, `kode_mesin`, `nama_mesin`, `status_mesin`, `keterangan_mesin`) VALUES
+(1, 'PGN', 'Penggiling', 1, 'Penghalusan bahan baku'),
+(2, 'MXR', 'Mixer', 1, 'Pencampuran bahan baku'),
+(3, 'ULN', 'Ulenan', 1, 'Penggilingan adonan briket'),
+(4, 'CTK', 'Cetak', 1, 'Pembentukan produk briket'),
+(5, 'OVN', 'Oven', 1, 'Pemanasan produk briket'),
+(6, 'AYN', 'Ayakan', 1, 'Pemisah abu batok kelapa'),
+(7, 'CTG', 'Cutting', 1, 'Pemotongan produk briket');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `master_problem`
+--
+
+CREATE TABLE `master_problem` (
+  `id_problem` int(11) NOT NULL,
+  `status` tinyint(1) DEFAULT '1',
+  `kode_problem` varchar(10) DEFAULT NULL,
+  `nama_problem` varchar(500) DEFAULT NULL,
+  `keterangan_problem` varchar(500) DEFAULT NULL,
+  `type` tinyint(1) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `master_problem`
+--
+
+INSERT INTO `master_problem` (`id_problem`, `status`, `kode_problem`, `nama_problem`, `keterangan_problem`, `type`) VALUES
+(1, 1, 'PRM', 'Perawatan mesin', 'Perawatan Mesin', 1),
+(2, 1, 'VBT', 'Vanbelt longgar', 'Karet Van Belt Melonggar', 2),
+(3, 1, 'RGG', 'Roda Gigi aus', 'Roda Gigi mesin Aus', 2),
+(4, 1, 'PLN', 'PLN Cut Off', 'Tidak ada suplai listrik', 2),
+(5, 1, 'SCW', 'Screw aus', 'Ulir Mesin Aus', 2),
+(6, 1, 'DCE', 'Dice pencetak luka', 'Bibir Pencetak Cacat', 2),
+(7, 1, 'CLM', 'Cleaning', 'Pembersihan Mesin dan Lingkungan produksi', 1),
+(8, 1, 'PMM', 'Pemindahan mesin', 'Mengatur posisi mesin', 1),
+(9, 1, 'PRB', 'Produksi berhenti', 'Pemberhentian produksi briket', 1),
+(10, 1, 'LNY', 'Lainnya', 'stop produksi', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `master_produk`
+--
+
+CREATE TABLE `master_produk` (
+  `id_produk` int(11) NOT NULL,
+  `nama_produk` varchar(255) DEFAULT NULL,
+  `keterangan` text NOT NULL,
+  `active` tinyint(1) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `master_produk`
+--
+
+INSERT INTO `master_produk` (`id_produk`, `nama_produk`, `keterangan`, `active`) VALUES
+(2, 'Cube 25 x 25', '14 gr', 1),
+(3, 'Cube 22 x 22', '10 gr', 1),
+(5, 'Cube 25 x 15', '10 gr', 1),
+(6, 'Hexagonal 25 x 50', '14 gr', 1),
+(7, 'Hexagonal 20 x 50', '10 gr', 1),
+(8, 'Finger ', '10 gr', 1),
+(9, 'Triangel', '14 gr', 1),
+(10, 'Diamond', '14 gr', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `master_user`
+--
+
+CREATE TABLE `master_user` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(200) DEFAULT NULL,
+  `nama` varchar(200) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `master_user`
+--
+
+INSERT INTO `master_user` (`id_user`, `username`, `password`, `nama`, `status`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Wawan', 1),
+(2, 'Supervisor', '09348c20a019be0318387c08df7a783d', 'Wawan', 1),
+(3, 'teknisi1', 'e21394aaeee10f917f581054d24b031f', 'Amin', 1),
+(5, 'teknisi2', 'e21394aaeee10f917f581054d24b031f', 'Topan', 1),
+(6, 'operator1', '4b583376b2767b923c3e1da60d10de59', 'Fendi', 1),
+(7, 'operator2', '4b583376b2767b923c3e1da60d10de59', 'Andi', 1),
+(9, 'operator3', '4b583376b2767b923c3e1da60d10de59', 'Rofi\'i', 1),
+(12, 'operator4', '4b583376b2767b923c3e1da60d10de59', 'Lilik', 1),
+(13, 'operator5', '4b583376b2767b923c3e1da60d10de59', 'Eksan', 1),
+(14, 'operator6', '4b583376b2767b923c3e1da60d10de59', 'Ayis', 1),
+(15, 'operator7', '4b583376b2767b923c3e1da60d10de59', 'Sulis', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `produksi`
+--
+
+CREATE TABLE `produksi` (
+  `id_produksi` int(11) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `id_mesin` int(11) DEFAULT NULL,
+  `id_produk` int(11) DEFAULT NULL,
+  `active` tinyint(1) DEFAULT '1',
+  `kode_session` varchar(100) DEFAULT NULL,
+  `kode_batch` varchar(50) DEFAULT NULL,
+  `waktu_mulai` datetime DEFAULT NULL,
+  `waktu_selesai` datetime DEFAULT NULL,
+  `duration_life` int(11) DEFAULT '0',
+  `prosentase` float DEFAULT '0',
+  `keterangan_produksi` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `produksi`
+--
+
+INSERT INTO `produksi` (`id_produksi`, `id_user`, `id_mesin`, `id_produk`, `active`, `kode_session`, `kode_batch`, `waktu_mulai`, `waktu_selesai`, `duration_life`, `prosentase`, `keterangan_produksi`) VALUES
+(1, 13, 1, 2, 0, 'MTU1NjcyNzY4Ny4x', 'KAIHGB0', '2019-05-01 18:22:23', '2019-05-01 18:31:49', 0, 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `trans_userhakakses`
+--
+
+CREATE TABLE `trans_userhakakses` (
+  `id_userhakakses` int(11) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `id_modul` int(11) DEFAULT '0',
+  `id_hakakses` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `trans_userhakakses`
+--
+
+INSERT INTO `trans_userhakakses` (`id_userhakakses`, `id_user`, `id_modul`, `id_hakakses`) VALUES
+(1, 3, 1, 2),
+(3, 1, 1, 1),
+(4, 4, 1, 3),
+(5, 5, 1, 2),
+(6, 6, 1, 3),
+(7, 7, 1, 3),
+(8, 8, 1, 3),
+(9, 8, 1, 3),
+(10, 9, 1, 3),
+(11, 12, 1, 3),
+(12, 2, 1, 4),
+(13, 13, 1, 3),
+(14, 14, 1, 3),
+(15, 15, 1, 3);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `ci_sessions`
+--
+ALTER TABLE `ci_sessions`
+  ADD KEY `ci_sessions_timestamp` (`timestamp`);
+
+--
+-- Indeks untuk tabel `downtime`
+--
+ALTER TABLE `downtime`
+  ADD PRIMARY KEY (`id_downtime`),
+  ADD KEY `id_keg_1` (`id_produksi`),
+  ADD KEY `id_problem_1` (`id_problem`);
+
+--
+-- Indeks untuk tabel `master_hakakses`
+--
+ALTER TABLE `master_hakakses`
+  ADD PRIMARY KEY (`id_hakakses`);
+
+--
+-- Indeks untuk tabel `master_mesin`
+--
+ALTER TABLE `master_mesin`
+  ADD PRIMARY KEY (`id_mesin`),
+  ADD UNIQUE KEY `UNIQUE KODE MESIN` (`kode_mesin`);
+
+--
+-- Indeks untuk tabel `master_problem`
+--
+ALTER TABLE `master_problem`
+  ADD PRIMARY KEY (`id_problem`),
+  ADD UNIQUE KEY `UNIQ` (`kode_problem`);
+
+--
+-- Indeks untuk tabel `master_produk`
+--
+ALTER TABLE `master_produk`
+  ADD PRIMARY KEY (`id_produk`);
+
+--
+-- Indeks untuk tabel `master_user`
+--
+ALTER TABLE `master_user`
+  ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `UNIQUE USERNAME` (`username`);
+
+--
+-- Indeks untuk tabel `produksi`
+--
+ALTER TABLE `produksi`
+  ADD PRIMARY KEY (`id_produksi`),
+  ADD KEY `id_user_1` (`id_user`),
+  ADD KEY `id_mesin1_1` (`id_mesin`),
+  ADD KEY `id_product_1` (`id_produk`);
+
+--
+-- Indeks untuk tabel `trans_userhakakses`
+--
+ALTER TABLE `trans_userhakakses`
+  ADD PRIMARY KEY (`id_userhakakses`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `downtime`
+--
+ALTER TABLE `downtime`
+  MODIFY `id_downtime` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `master_hakakses`
+--
+ALTER TABLE `master_hakakses`
+  MODIFY `id_hakakses` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `master_mesin`
+--
+ALTER TABLE `master_mesin`
+  MODIFY `id_mesin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `master_problem`
+--
+ALTER TABLE `master_problem`
+  MODIFY `id_problem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT untuk tabel `master_produk`
+--
+ALTER TABLE `master_produk`
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT untuk tabel `master_user`
+--
+ALTER TABLE `master_user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT untuk tabel `produksi`
+--
+ALTER TABLE `produksi`
+  MODIFY `id_produksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `trans_userhakakses`
+--
+ALTER TABLE `trans_userhakakses`
+  MODIFY `id_userhakakses` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

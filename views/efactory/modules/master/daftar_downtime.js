@@ -9,7 +9,7 @@ Ext.define("FACTORY.modules.master.daftar_downtime", {
 			border: 0,
 			store: Ext.create('Ext.data.Store', {
 				storeId: 'downtimeStore',
-				fields: ['id_problem', 'status', 'kode_downtime', 'nama_problem', 'keterangan_problem', 'type'],
+				fields: ['id_problem', 'status', 'kode_problem', 'nama_problem', 'keterangan_problem', 'type'],
 				autoLoad: true,
 				proxy: {
 					type: 'ajax',
@@ -37,7 +37,7 @@ Ext.define("FACTORY.modules.master.daftar_downtime", {
 				width: 30
 			}, {
 				header: 'Kode Downtime',
-				dataIndex: 'kode_downtime',
+				dataIndex: 'kode_problem',
 				flex: 1
 			}, {
 				header: 'Nama Downtime',
@@ -162,7 +162,7 @@ Ext.define("FACTORY.modules.master.daftar_downtime", {
 					name: 'id_problem'
 				}, {
 					fieldLabel: 'Kode Downtime',
-					name: 'kode_downtime',
+					name: 'kode_problem',
 					allowBlank: false
 				}, {
 					fieldLabel: 'Nama Downtime',

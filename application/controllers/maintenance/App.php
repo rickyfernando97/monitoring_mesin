@@ -32,7 +32,7 @@ class App extends MY_Controller {
             $time_selesai = (int) strtotime($v->waktu_selesai);
             $duration = $time_selesai - $time_mulai;
             $params_upd = array(
-                'id_detailkegiatan' => $v->id_detailkegiatan,
+                'id_downtime' => $v->id_downtime,
                 'downtime_duration' => $duration
             );
             $res = $this->m_detailkegiatan->upd($params_upd);
@@ -104,7 +104,7 @@ class App extends MY_Controller {
             $status = 2;
         }
         $params = array(
-            'id_keg' => (int) $this->input->post('id_keg'),
+            'id_produksi' => (int) $this->input->post('id_produksi'),
             'status' => $status
         );
         $res = $this->m_detailkegiatan->get_byid($params);
@@ -118,7 +118,7 @@ class App extends MY_Controller {
 
     function confirm_problem(){
         $params_detail = array(
-            'id_detailkegiatan' => (int) $this->input->post('id_detailkegiatan'),
+            'id_downtime' => (int) $this->input->post('id_downtime'),
             'status' => 2,
             'waktu_confirm' => date('Y-m-d H:i:s')
         );
@@ -146,7 +146,7 @@ class App extends MY_Controller {
         $this->load->model('m_kegiatan');
 
         $params = array(
-            'id_keg' => (int) $this->input->post('id_keg')
+            'id_produksi' => (int) $this->input->post('id_produksi')
         );
 
         $machine_kegiatan = $this->m_kegiatan->get_byid($params);
@@ -178,7 +178,7 @@ class App extends MY_Controller {
 
     function resolv_problem(){
         $params_detail = array(
-            'id_detailkegiatan' => (int) $this->input->post('id_detailkegiatan'),
+            'id_downtime' => (int) $this->input->post('id_downtime'),
             'status' => 3,
             'waktu_selesai' => date('Y-m-d H:i:s')
         );

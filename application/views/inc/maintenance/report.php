@@ -133,7 +133,7 @@
                     { "data": "kode_batch" },
                     { "data": "kode_mesin" },
                     { "data": "nama_mesin" },
-                    { "data": "product_name" },
+                    { "data": "nama_produk" },
                     { "data": "start" },
                     { "data": "end" },
                     {

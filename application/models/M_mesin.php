@@ -12,20 +12,20 @@ class M_mesin extends CI_Model{
                     master_user.id_user,
                     master_user.username,
                     master_user.nama,
-                    trans_kegiatan.id_keg, 
-                    trans_kegiatan.id_user, 
-                    trans_kegiatan.active, 
-                    trans_kegiatan.kode_batch, 
-                    trans_kegiatan.waktu_mulai, 
-                    trans_kegiatan.waktu_selesai, 
-                    trans_kegiatan.keterangan_keg');
+                    produksi.id_produksi, 
+                    produksi.id_user, 
+                    produksi.active, 
+                    produksi.kode_batch, 
+                    produksi.waktu_mulai, 
+                    produksi.waktu_selesai, 
+                    produksi.keterangan_produksi');
 
         if(isset($params['status_mesin'])){
             $this->db->where('status_mesin',$params['status_mesin']);
         }
 
-        $this->db->join('trans_kegiatan','master_mesin.id_mesin=trans_kegiatan.id_mesin and trans_kegiatan.active = 1','left');
-        $this->db->join('master_user','trans_kegiatan.id_user=master_user.id_user','left');
+        $this->db->join('produksi','master_mesin.id_mesin=produksi.id_mesin and produksi.active = 1','left');
+        $this->db->join('master_user','produksi.id_user=master_user.id_user','left');
         $this->db->order_by("master_mesin.id_mesin", "asc");
         $res = $this->db->get('master_mesin');
         return $res;

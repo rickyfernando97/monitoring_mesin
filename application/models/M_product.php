@@ -12,35 +12,35 @@ class M_product extends CI_Model{
             $this->db->where('active',$params['active']);
         }
 
-		$res = $this->db->get('master_product');
+		$res = $this->db->get('master_produk');
 		return $res;
     }
 
     function add($params=array()){
-        if(isset($params['id_product'])){
-            unset($params['id_product']);
+        if(isset($params['id_produk'])){
+            unset($params['id_produk']);
         }
-        $res = $this->db->insert('master_product',$params);
+        $res = $this->db->insert('master_produk',$params);
         return $res;
     }
 
     function upd($params=array()){
-        if(isset($params['id_product'])){
-            $this->db->where('id_product',$params['id_product']);
+        if(isset($params['id_produk'])){
+            $this->db->where('id_produk',$params['id_produk']);
         }
-        unset($params['id_product']);
+        unset($params['id_produk']);
 
-        $res = $this->db->update('master_product',$params);
+        $res = $this->db->update('master_produk',$params);
         return $res;
     }
 
     function del($params=array()){
-        if(isset($params['id_product'])){
-            $this->db->where('id_product',$params['id_product']);
+        if(isset($params['id_produk'])){
+            $this->db->where('id_produk',$params['id_produk']);
         }
-        unset($params['id_product']);
+        unset($params['id_produk']);
 
-        $res = $this->db->delete('master_product',$params);
+        $res = $this->db->delete('master_produk',$params);
         return $res;
     }
 }

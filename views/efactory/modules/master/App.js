@@ -22,7 +22,7 @@ Ext.define("FACTORY.modules.master.App", {
 				text: 'Master Produk',
 				handler: function() {
 					var obj = me.getLayout();
-					obj.setActiveItem('master_product');
+					obj.setActiveItem('master_produk');
 				}
 			}, {
 				text: 'Master User',
@@ -54,7 +54,7 @@ Ext.define("FACTORY.modules.master.App", {
 			}, {
 				xtype: 'daftar_product',
 				title: 'Master Produk',
-				itemId: 'master_product'
+				itemId: 'master_produk'
 			}, {
 				xtype: 'daftar_user',
 				title: 'Master User',

@@ -119,7 +119,7 @@
                     { "data": "kode_mesin" },
                     { "data": "jam_mulai" },
                     { "data": "jam_selesai" },
-                    { "data": "kode_downtime" },
+                    { "data": "kode_problem" },
                     {
                       "data": "downtime_duration",
                       "render": function ( data, type, full, meta ) {

@@ -29,7 +29,7 @@ class M_log extends CI_Model{
         }
         $this->db->where('active',1);
         $this->db->where('waktu_selesai is null');
-        $res = $this->db->get('trans_kegiatan');
+        $res = $this->db->get('produksi');
         return $res;
     }
 

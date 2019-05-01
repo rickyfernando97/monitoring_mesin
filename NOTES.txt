@@ -6,7 +6,7 @@ status mesin
 4 -> MASALAH DIKONFIRMASI (masalah selesai langsung ke 2 lagi mesin berjalan kembali)
 5 -> RUSAK
 
-status di tabel `trans_detailkegiatan`
+status di tabel `downtime`
 1 -> Masalah Baru
 2 -> Masalah dikonfirmasi
 3 -> masalah resolv

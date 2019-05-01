@@ -13,8 +13,8 @@ class App extends MY_Controller {
         $this->load->model('m_product');
         
         $id_mesin = (int) $this->session->userdata('id_mesin');
-        $id_keg = (int) $this->session->userdata('id_keg');
-        if($id_mesin!=0 || $id_keg!=0){
+        $id_produksi = (int) $this->session->userdata('id_produksi');
+        if($id_mesin!=0 || $id_produksi!=0){
             redirect('operator/app/machine');
         }
 
@@ -43,8 +43,8 @@ class App extends MY_Controller {
 
     function machine(){
         $id_mesin = (int) $this->session->userdata('id_mesin');
-        $id_keg = (int) $this->session->userdata('id_keg');
-        if($id_mesin==0 || $id_keg==0){
+        $id_produksi = (int) $this->session->userdata('id_produksi');
+        if($id_mesin==0 || $id_produksi==0){
             redirect('operator');
         }
 
@@ -55,18 +55,18 @@ class App extends MY_Controller {
 
         $params = array(
             'id_mesin' => $id_mesin,
-            'id_keg' => $id_keg
+            'id_produksi' => $id_produksi
         );
 
         $data = array();
         $data['machine_kegiatan'] = $this->m_kegiatan->get_byid($params);
         $data['machine_kegiatan']->time_mulai = strtotime($data['machine_kegiatan']->waktu_mulai);
 
-        unset($params['id_keg']);
+        unset($params['id_produksi']);
         $data['machine'] = $this->m_mesin->get_byid($params);
         $data['problem'] = $this->m_problem->get()->result();
         $params2 = array(
-            'id_keg' => $id_keg,
+            'id_produksi' => $id_produksi,
             'status' => 2
         );
         $dt_now = $this->m_detailkegiatan->get($params2);
@@ -86,7 +86,7 @@ class App extends MY_Controller {
         $this->load->model('m_kegiatan');
 
         $params_kegiatan = array(
-            'id_keg' => $this->session->userdata('id_keg'),
+            'id_produksi' => $this->session->userdata('id_produksi'),
             'waktu_mulai' => date('Y-m-d H:i:s')
         );
 
@@ -115,7 +115,7 @@ class App extends MY_Controller {
 
         $params_kegiatan = array(
             'id_mesin' => $this->session->userdata('id_mesin'),
-            'id_keg' => $this->session->userdata('id_keg'),
+            'id_produksi' => $this->session->userdata('id_produksi'),
             'active' => 0,
             'waktu_selesai' => date('Y-m-d H:i:s')
         );
@@ -132,7 +132,7 @@ class App extends MY_Controller {
             if($res2){
                 $data = array(
                     'id_mesin' => 0,
-                    'id_keg' => 0
+                    'id_produksi' => 0
                 );
                 $this->session->set_userdata($data);
                 $out = array('success'=>true);
@@ -153,7 +153,7 @@ class App extends MY_Controller {
             // 'waktu_mulai' => date('Y-m-d H:i:s'),
             'kode_session' => base64_encode(time().'.'.$id_mesin),
             'kode_batch' => $this->input->post('kode_batch'),
-            'id_product' => (int) $this->input->post('id_product'),
+            'id_produk' => (int) $this->input->post('id_produk'),
         );
 
         $params2 = array(
@@ -193,7 +193,7 @@ class App extends MY_Controller {
         }
 
         $res = $this->m_kegiatan->add($params);
-        $id_keg = $this->db->insert_id();
+        $id_produksi = $this->db->insert_id();
 
         if($res){
             // $res2 = $this->m_mesin->upd($params2);
@@ -201,7 +201,7 @@ class App extends MY_Controller {
             if($res2){
                 $data = array(
                     'id_mesin' => $params['id_mesin'],
-                    'id_keg' => $id_keg,
+                    'id_produksi' => $id_produksi,
                     'kode_session' => $params['kode_session']
                 );
                 $this->session->set_userdata($data);
@@ -219,7 +219,7 @@ class App extends MY_Controller {
         $this->load->model('m_detailkegiatan');
 
         $params1 = array(
-            'id_detailkegiatan' => (int) $this->input->post('id_detailkegiatan'),
+            'id_downtime' => (int) $this->input->post('id_downtime'),
             'status' => 3,
             'waktu_selesai' => date('Y-m-d H:i:s')
         );
@@ -252,16 +252,16 @@ class App extends MY_Controller {
 
     function machine_add_downtime(){
         $id_mesin = $this->session->userdata('id_mesin');
-        $id_keg = $this->session->userdata('id_keg');
+        $id_produksi = $this->session->userdata('id_produksi');
 
         $this->load->model('m_detailkegiatan');
         $this->load->model('m_problem');
         
         $params = array(
-            'id_keg' => $id_keg,
+            'id_produksi' => $id_produksi,
             'id_problem' => $this->input->post('id_problem'),
             'waktu_mulai' => date('Y-m-d H:i:s'),
-            'keterangan_detailkeg' => $this->input->post('keterangan')
+            'keterangan_downtime' => $this->input->post('keterangan')
         );
 
         $data_dt = $this->m_problem->get_byid($params);

@@ -9,7 +9,7 @@ Ext.define("FACTORY.modules.master.daftar_product", {
 			border: 0,
 			store: Ext.create('Ext.data.Store', {
 				storeId: 'productStore',
-				fields: ['id_product', 'product_name', 'duration', 'active'],
+				fields: ['id_produk', 'nama_produk', 'duration', 'active'],
 				autoLoad: true,
 				proxy: {
 					type: 'ajax',
@@ -37,7 +37,7 @@ Ext.define("FACTORY.modules.master.daftar_product", {
 				width: 30
 			}, {
 				header: 'Nama Produk',
-				dataIndex: 'product_name',
+				dataIndex: 'nama_produk',
 				flex: 3
 			}, {
 				header: 'Keterangan',
@@ -104,7 +104,7 @@ Ext.define("FACTORY.modules.master.daftar_product", {
 					Ext.Ajax.request({
 						url: app.SITE_URL + '/admin/master/product/del',
 						params: {
-							id_product: data.get('id_product')
+							id_produk: data.get('id_produk')
 						},
 						success: function(response) {
 							var res = Ext.decode(response.responseText);
@@ -155,10 +155,10 @@ Ext.define("FACTORY.modules.master.daftar_product", {
 				defaultType: 'textfield',
 				items: [{
 					xtype: 'hiddenfield',
-					name: 'id_product'
+					name: 'id_produk'
 				}, {
 					fieldLabel: 'Nama Produk',
-					name: 'product_name',
+					name: 'nama_produk',
 					allowBlank: false
 				}, {
 					fieldLabel: 'Keterangan',

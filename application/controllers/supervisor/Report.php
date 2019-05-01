@@ -19,7 +19,7 @@ class Report extends MY_Controller {
 
         foreach ($data as $k) {
             $params_d = array(
-                'id_keg' => $k->id_keg
+                'id_produksi' => $k->id_produksi
             );
             $data_d = $this->m_kegiatan->get_byid($params_d);
             $time_selesai = strtotime($data_d->waktu_selesai);
@@ -27,7 +27,7 @@ class Report extends MY_Controller {
             $duration_life = ($time_selesai - $time_mulai) - $data_d->total_downtime;
             $prosentase = round($duration_life / ($time_selesai - $time_mulai) * 100, 2);
             $params_upd = array(
-                'id_keg' => $data_d->id_keg,
+                'id_produksi' => $data_d->id_produksi,
                 'duration_life' => $duration_life,
                 'prosentase' => $prosentase
             );
